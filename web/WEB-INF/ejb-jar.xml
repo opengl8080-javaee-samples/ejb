@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ejb-jar xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+        version="3.2"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/ejb-jar_3_2.xsd">
+  
+  <interceptors>
+    <interceptor>
+      <interceptor-class>sample.javaee.ejb.interceptor.DefaultInterceptor</interceptor-class>
+    </interceptor>
+    <interceptor>
+      <interceptor-class>sample.javaee.ejb.interceptor.DefaultInterceptor2</interceptor-class>
+    </interceptor>
+    <interceptor>
+      <interceptor-class>sample.javaee.ejb.interceptor.HelloInterceptor</interceptor-class>
+    </interceptor>
+  </interceptors>
+  
+  <assembly-descriptor>
+    <interceptor-binding>
+      <ejb-name>*</ejb-name>
+      <interceptor-class>sample.javaee.ejb.interceptor.DefaultInterceptor</interceptor-class>
+      <interceptor-class>sample.javaee.ejb.interceptor.DefaultInterceptor2</interceptor-class>
+    </interceptor-binding>
+    
+    <interceptor-binding>
+      <ejb-name>HelloEjb</ejb-name>
+      <interceptor-class>sample.javaee.ejb.interceptor.HelloInterceptor</interceptor-class>
+    </interceptor-binding>
+  </assembly-descriptor>
+</ejb-jar>
