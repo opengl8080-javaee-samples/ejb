@@ -2,6 +2,8 @@ ejb
 ===
 
 #ステートフルセッションBean のパッシブ化動作確認方法
+JMeter で大量のステートフルセッションBean を作成することでメモリを圧迫させ、パッシブ化を起こさせる。
+
 1. GlassFish を起動する。
 1. Web ブラウザで `http://localhost:8080/ejb/sfsb-passivate` を**2回以上**開く。
 1. [Apache JMeter](http://jmeter.apache.org/) で `sfsb-passivate.jmx` を開き、実行する。
